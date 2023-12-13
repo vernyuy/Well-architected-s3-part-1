@@ -87,7 +87,7 @@ class SqsBlogStack(Stack):
                                    role=role,
                                    tracing=Tracing.ACTIVE
                                    )
-        csv_processing_to_sqs_function .add_environment('SQS_QUEUE_URL', queue.queue_url)
+        csv_processing_to_sqs_function.add_environment('SQS_QUEUE_URL', queue.queue_url)
 
         # Add tags to the Lambda function
         Tags.of(csv_processing_to_sqs_function ).add("department", "inventory")
